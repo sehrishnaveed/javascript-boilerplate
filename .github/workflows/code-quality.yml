@@ -1,0 +1,23 @@
+name: ESLint and Prettier
+run-name: Running ESLint and Prettier
+on:
+  push: # Trigger the workflow on push events for any branch
+  pull_request:
+    types: [synchronize, opened, reopen]
+jobs:
+  code_quality:
+    name: ESLint and Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm install
+      - name: Run ESLint
+        run: npm run lint
+      - name: Run Prettier
+        run: npm run prettier
