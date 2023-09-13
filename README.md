@@ -15,7 +15,7 @@ we have setup
 2. Run command `npm install` to install all the dependencies
 3. Run command `npm run dev` to run the project in dev environment
 
-#### Add New Module
+#### How to Add New Module?
 Open `webpack.config.js` file,
 1. add page name in `pages` array.
    `const pages = ['signup'];`
